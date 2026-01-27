@@ -20,7 +20,7 @@ st.set_page_config(
 # -------------------------------
 @st.cache_resource
 def load_artifacts():
-    model = load_model("fake_news_model.keras")
+    model = load_model("fake_news_model.h5")
     with open("tokenizer.pkl", "rb") as f:
         tokenizer = pickle.load(f)
     return model, tokenizer
@@ -126,3 +126,4 @@ if st.button("Analyze Article"):
             "It analyzes language patterns learned from historical US political news datasets.\n\n"
             "Predictions may not be reliable for international or non-political articles."
         )
+
