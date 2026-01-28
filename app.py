@@ -20,7 +20,7 @@ st.set_page_config(
 # Load model & tokenizer
 # -------------------------------
 
-model = load_model("fake_news_model.keras")
+model = load_model("fake_news_model.h5")
 tokenizer = joblib.load("tokenizer.joblib")
 
 # -------------------------------
@@ -122,6 +122,7 @@ if st.button("Analyze Article"):
             "It analyzes language patterns learned from historical US political news datasets.\n\n"
             "Predictions may not be reliable for international or non-political articles."
         )
+
 
 
 
