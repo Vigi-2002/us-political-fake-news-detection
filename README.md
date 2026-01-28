@@ -51,6 +51,18 @@ This limitation reflects real-world machine learning practices and helps avoid m
 - **TensorFlow / Keras**
 - **Scikit-learn**
 - **Streamlit**
+- **Joblib (for tokenizer persistence)**
+
+---
+
+## ⚙️ NLP Pipeline
+
+- Text cleaning (lowercasing, punctuation removal)
+- Stopword removal
+- Tokenization
+- Sequence padding
+- Model inference
+- Probability-based prediction
 
 ---
 
@@ -110,10 +122,11 @@ Predictions should be used strictly for **educational and experimental purposes*
 
 Fake-News-Detection/
 │
-├── app.py
-├── fake_news_model.h5
-├── tokenizer.pkl
-├── fake_news_training.ipynb
+├── app.py                     # Streamlit application
+├── fake_news_model.h5         # Trained Bi-LSTM model
+├── tokenizer.joblib           # Saved tokenizer
+├── fake_news_training.ipynb   # Notebook
+├── requirements.txt           # Dependencies
 ├── README.md
 
 ---
