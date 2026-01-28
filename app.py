@@ -6,6 +6,7 @@ import string
 
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+import joblib
 
 # -------------------------------
 # Page config (MUST BE FIRST)
@@ -18,14 +19,9 @@ st.set_page_config(
 # -------------------------------
 # Load model & tokenizer
 # -------------------------------
-@st.cache_resource
-def load_artifacts():
-    model = load_model("fake_news_model.h5")
-    with open("tokenizer.pkl", "rb") as f:
-        tokenizer = pickle.load(f)
-    return model, tokenizer
 
-model, tokenizer = load_artifacts()
+model = load_model("fake_news_model.keras")
+tokenizer = joblib.load("tokenizer.joblib")
 
 # -------------------------------
 # Text cleaning
@@ -126,4 +122,5 @@ if st.button("Analyze Article"):
             "It analyzes language patterns learned from historical US political news datasets.\n\n"
             "Predictions may not be reliable for international or non-political articles."
         )
+
 
